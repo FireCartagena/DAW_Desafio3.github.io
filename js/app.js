@@ -56,16 +56,25 @@ app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
     };
 
     $scope.pagar = function() {
-        Swal.fire({
-            title: 'Compra',
-            text: 'Compra realizada con exito.',
-            icon: 'success', 
-            confirmButtonText: 'Aceptar'
-          });
 
-        $scope.carrito = [];
-        $scope.totalCarrito = 0;
-        $scope.cerrarCarrito();
+        if($scope.totalCarrito > 0){
+            Swal.fire({
+                title: 'Compra',
+                text: 'Compra realizada con exito.',
+                icon: 'success', 
+                confirmButtonText: 'Aceptar'
+            });
+            $scope.carrito = [];
+            $scope.totalCarrito = 0;
+            $scope.cerrarCarrito();
+        }else{
+            Swal.fire({
+                title: 'Compra',
+                text: 'Compra no puede ser realizada.',
+                icon: 'warning', 
+                confirmButtonText: 'Aceptar'
+              });
+        }
     };
 
     $scope.cargarProductos();
