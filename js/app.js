@@ -56,7 +56,13 @@ app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
     };
 
     $scope.pagar = function() {
-        alert('Compra realizada con éxito.');
+        Swal.fire({
+            title: 'Compra',
+            text: 'Compra realizada con exito.',
+            icon: 'success', 
+            confirmButtonText: 'Aceptar'
+          });
+
         $scope.carrito = [];
         $scope.totalCarrito = 0;
         $scope.cerrarCarrito();
