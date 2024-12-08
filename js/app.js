@@ -1,6 +1,7 @@
 var app = angular.module('tiendaApp', []);
 
 app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
+    
     $scope.imagenesSlider = [
         'media/image/Carrousel/0.jpg',
         'media/image/Carrousel/1.png',
@@ -17,8 +18,7 @@ app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
         $http.get('https://fakestoreapi.com/products')
             .then(function(response) {
                 $scope.productos = response.data;
-                $scope.categorias = [...new Set($scope.productos.map(producto => producto.category))];
-                
+                $scope.categorias = [...new Set($scope.productos.map(producto => producto.category))]; 
             });
     };
 
