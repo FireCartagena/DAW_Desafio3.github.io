@@ -66,6 +66,7 @@
             </div>
 
             <div class="container-fluid">
+
                 <!-- Filtros de busqueda -->
                 <div class="row mt-3 mb-3">
                     <div class="col-12">
@@ -73,7 +74,9 @@
                     </div>
                     <div class="col-3">
                         <label>Categoría:</label>
-                        <select class="form-control" ng-model="categoriaSeleccionada" ng-options="categoria for categoria in categorias" ></select>
+                        <select class="form-control" ng-model="categoriaSeleccionada" ng-options="categoria for categoria in categorias" >
+                            
+                        </select>
                     </div>
                     <div class="col-9">
                         <label>Buscar:</label>
@@ -87,7 +90,7 @@
                 <!-- Productos -->
                 <div class="row mt-5 mb-5">
                     <div class="card-deck">
-                        <div class="col-12 col-md-4 mb-3" ng-repeat="producto in productos | filter: { title: busqueda, category:categoriaSeleccionada  }">
+                        <div class="col-12 col-md-4 mb-3" ng-repeat="producto in productos | filter: { title: busqueda, category:categoriaSeleccionada }">
                             <div class="card border-primary h-100">
                                 <div class="card-body">
                                     <div class="row mb-2">

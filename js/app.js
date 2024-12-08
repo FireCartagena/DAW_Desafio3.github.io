@@ -9,9 +9,9 @@ app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
         'media/image/Carrousel/3.png'
     ];
 
-    $scope.title = 'Libros Magicos';
-    $scope.productos = [];
-    $scope.carrito = [];
+    $scope.title        = 'Libros Magicos';
+    $scope.productos    = [];
+    $scope.carrito      = [];
     $scope.totalCarrito = 0;
 
     $scope.cargarProductos = function() {
