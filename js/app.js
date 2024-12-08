@@ -18,7 +18,7 @@ app.controller('TiendaController', ['$scope', '$http', function($scope, $http) {
             .then(function(response) {
                 $scope.productos = response.data;
                 $scope.categorias = [...new Set($scope.productos.map(producto => producto.category))];
-                $scope.filtrarProductos();
+                
             });
     };
 
